@@ -27,7 +27,5 @@ var appsettingsText = File.ReadAllText("appsettings.json");
 //Get the api key from the appsettings text using it's key ("apiKey")
 var apiKey = JObject.Parse(appsettingsText)["apiKey"].ToString();
 
-Console.WriteLine(apiKey);
-
-
-var weatherURl = "http://api.openweathermap.org/data/2.5/weather?zip=35091&appid=&units=imperial";
+//Building the api url using the provided params you chose (I chose the zip code option) along with the api key
+var weatherURl = $"http://api.openweathermap.org/data/2.5/weather?zip=35091&appid={apiKey}&units=imperial";
